@@ -40,7 +40,7 @@ export function Portfolio() {
   }, []);
 
   return (
-    <Container id="portfolio">
+    <Container id="projects">
       <h2>My most popular projects</h2>
 
       <div className="projects">
