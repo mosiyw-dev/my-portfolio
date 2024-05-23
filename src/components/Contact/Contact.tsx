@@ -17,7 +17,7 @@ export function Contact() {
       <div className="contacts">
         <div>
           <img src={emailIcon} alt="Email" />
-          <a href="mailto:mosiyw10@gmail.com">mosiyw10@gmail.com</a>
+          <a href="mailto:mosiyw20@gmail.com">mosiyw20@gmail.com</a>
         </div>
         <div>
           <img src={phoneIcon} alt="Email" />

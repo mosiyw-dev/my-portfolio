@@ -4,6 +4,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import Avatar from "../../assets/Avatar.svg";
 import { NavHashLink } from "react-router-hash-link";
 import Typewriter from "typewriter-effect";
+
 export function Hero() {
   return (
     <Container id="home">

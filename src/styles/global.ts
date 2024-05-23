@@ -1,61 +1,73 @@
 import { createGlobalStyle } from "styled-components";
 
-
-
 export const GlobalStyle = createGlobalStyle`
 
-  :root{
+  // Hide scrollbar for Chrome, Safari and Opera
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  // Hide scrollbar for IE, Edge and Firefox
+  html {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  }
+  :root {
     --pink: #E31F71;
     --black: #212121;
     --green: #23ce6b;
     --blue: #016fb9;
     scroll-padding-top: 10rem;
 
-    &.light{
-
-      body{
-        transition: 0.5s;
+    &.light {
+      body {
+        transition: background-color 0.5s, color 0.5s;
         background-color: #f5f5f5;
         color: var(--black);
       }
 
-      .logo{
+      // Add transitions to other elements as needed
+      // ...
+
+      .logo {
+        transition: color 0.5s;
         color: var(--black);
       }
 
-      header.header-fixed{
-        transition: 0.5s;
+      header.header-fixed {
+        transition: background-color 0.5s;
         background-color: #f5f5f550;
-        a{
-          transition: 0.5s;
+        a {
+          transition: color 0.5s;
           color: black;
         }
-        .menu,.menu:before, .menu:after{
+        .menu, .menu:before, .menu:after {
+          transition: background-color 0.5s;
           background-color: var(--black); 
         }
-        .menu.active{
+        .menu.active {
+          transition: background-color 0.5s;
           background-color: rgba(555,555,555,0);
         }
       }
 
-      footer.footer{
-        transition: 0.5s;
+      footer.footer {
+        transition: background-color 0.5s, color 0.5s;
         background-color: rgba(0,0,0,0.1);
         color: var(--black);
       }
 
-      form{
-        input,textarea{
-          transition: 0.5s;
+      form {
+        input, textarea {
+          transition: border-color 0.5s, color 0.5s;
           border: solid 1px var(--black);
           color: var(--black);
-          &::placeholder{
-            transition: 0.5s;
+          &::placeholder {
+            transition: color 0.5s;
             color: var(--black);
           }
         }
       }
-
     }
   }
 
@@ -122,4 +134,4 @@ export const GlobalStyle = createGlobalStyle`
   }
   
 
-`
+`;

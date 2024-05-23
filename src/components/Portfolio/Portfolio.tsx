@@ -10,6 +10,8 @@ interface Project {
   name: string;
   description: string;
   fork: boolean;
+  languages_url: string;
+  languages?: string[];
   // add other properties as needed
 }
 
@@ -23,13 +25,23 @@ export function Portfolio() {
         const nonForkedAndDescribedProjects = data.filter(
           (project: Project) => !project.fork && project.description
         );
-        setProjects(nonForkedAndDescribedProjects);
+
+        // Fetch languages for each project
+        const projectsWithLanguages = nonForkedAndDescribedProjects.map(
+          async (project: Project) => {
+            const response = await fetch(project.languages_url);
+            const languages = await response.json();
+            return { ...project, languages: Object.keys(languages) };
+          }
+        );
+
+        Promise.all(projectsWithLanguages).then(setProjects);
       });
   }, []);
 
   return (
     <Container id="portfolio">
-      <h2>My portfolio</h2>
+      <h2>My most popular projects</h2>
 
       <div className="projects">
         {projects.map((project, index) => (
@@ -65,7 +77,9 @@ export function Portfolio() {
               </div>
               <footer>
                 <ul className="tech-list">
-                  {/* You can add technologies here */}
+                  {project.languages?.map((language, index) => (
+                    <li key={index}>{language}</li>
+                  ))}
                 </ul>
               </footer>
             </div>

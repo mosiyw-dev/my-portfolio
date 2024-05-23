@@ -105,7 +105,7 @@ const About = () => {
       </div>
       <div className="about-image">
         <ScrollAnimation animateIn="fadeInRight" delay={0.6 * 1000}>
-          <img className="icon" src={myImage} alt="my image" />
+          <img src={myImage} alt="my image" />
         </ScrollAnimation>
       </div>
     </Container>

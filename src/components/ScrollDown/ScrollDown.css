@@ -1,0 +1,26 @@
+.scroll-down {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-out; /* Add transition for smooth hiding */
+}
+
+.scroll-down img {
+  width: 80px;
+  height: 80px;
+  animation: bounce 2s infinite;
+  transform: scale(1.3);
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction with the hidden element */
+}
+
+/* Hide on devices in portrait orientation */
+@media screen and (orientation: portrait) {
+  .scroll-down {
+    display: none;
+  }
+}
