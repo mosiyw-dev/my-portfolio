@@ -19,7 +19,7 @@ export function Portfolio() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/mosiyw/repos") // replace {username} with your GitHub username
+    fetch("https://api.github.com/users/mosiyw-shobe2/repos") // replace {username} with your GitHub username
       .then((response) => response.json())
       .then((data) => {
         const nonForkedAndDescribedProjects = data.filter(
